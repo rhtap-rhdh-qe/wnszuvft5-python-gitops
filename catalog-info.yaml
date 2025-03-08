@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: wnszuvft5-python-gitops
+  description: This is GitOps manifest for wnszuvft5-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=wnszuvft5-python
+    backstage.io/kubernetes-id: wnszuvft5-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: wnszuvft5-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:wnszuvft5-python
